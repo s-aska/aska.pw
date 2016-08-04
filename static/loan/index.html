@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Loan</title>
+    <meta name="description" content="Loan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Loan</h1>
+      <form>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">所有開始</label>
+          <div class="col-md-9">
+            <input class="form-control" type="date" value="" id="example-number-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">物件価格</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="3170" id="example-number-input">
+              <div class="input-group-addon">万円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">頭金</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="610" id="example-number-input">
+              <div class="input-group-addon">万円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">ローン金利</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="2.172" id="example-number-input" step="0.001">
+              <div class="input-group-addon">%</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">ローン年数</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="35" id="example-number-input">
+              <div class="input-group-addon">年</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">家賃/月</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="10.7" id="example-number-input" step="0.1">
+              <div class="input-group-addon">万円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">管理手数料/月</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="5350" id="example-number-input">
+              <div class="input-group-addon">円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">管理費/月</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="5200" id="example-number-input">
+              <div class="input-group-addon">円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">修繕積立金/月</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="2000" id="example-number-input">
+              <div class="input-group-addon">円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">家賃変動</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="-1000" id="example-number-input">
+              <div class="input-group-addon">円</div>
+            </div>
+            <small class="form-text text-muted">値上がりはプラス、値下がりはマイナス</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">新築値下がり率</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="5" id="example-number-input">
+              <div class="input-group-addon">%</div>
+            </div>
+            <small class="form-text text-muted">中古で買う場合は0</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-md-3 col-form-label">中古値下がり率</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="2" id="example-number-input">
+              <div class="input-group-addon">%</div>
+            </div>
+            <small class="form-text text-muted">値上がりが期待できる場合はマイナス</small>
+          </div>
+        </div>
+      </form>
+      <a class="btn btn-primary" href="#">資産形成シミュレーション</a>
+      <a class="btn btn-info" href="#">保存</a>
+      <br>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
