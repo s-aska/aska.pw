@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Loan</title>
+    <meta name="description" content="Loan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+    <style>
+    .text-xs-right {
+      font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-size:0.9em;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <!-- script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script -->
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <h1 class="navbar-brand m-b-0">ローン収支</h1>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+      <form class="container" style="max-width:640px;">
+        <div class="form-group row">
+          <label for="purchase_date" class="col-md-3 col-form-label">所有開始</label>
+          <div class="col-md-9">
+            <input class="form-control" type="date" value="" id="purchase_date">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="price" class="col-md-3 col-form-label">物件価格</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="3170" id="price">
+              <div class="input-group-addon">万円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="deposit" class="col-md-3 col-form-label">頭金</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="650" id="deposit">
+              <div class="input-group-addon">万円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="interest_rate" class="col-md-3 col-form-label">ローン金利</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="2.172" id="interest_rate" step="0.001">
+              <div class="input-group-addon">%</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="loan_years" class="col-md-3 col-form-label">ローン年数</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="35" id="loan_years">
+              <div class="input-group-addon">年</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rent" class="col-md-3 col-form-label">家賃/月</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="10.7" id="rent" step="0.1">
+              <div class="input-group-addon">万円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="management_fee" class="col-md-3 col-form-label">管理手数料/月</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="5350" id="management_fee">
+              <div class="input-group-addon">円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="administrative_expense" class="col-md-3 col-form-label">管理費/月</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="5200" id="administrative_expense">
+              <div class="input-group-addon">円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="reserve_fund_for_repair" class="col-md-3 col-form-label">修繕積立金/月</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="2000" id="reserve_fund_for_repair">
+              <div class="input-group-addon">円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="real_estate_acquisition_tax" class="col-md-3 col-form-label">不動産取得税</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="180000" id="real_estate_acquisition_tax">
+              <div class="input-group-addon">円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="fixed_asset_tax" class="col-md-3 col-form-label">固定資産税</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="80000" id="fixed_asset_tax">
+              <div class="input-group-addon">円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="prepayments" class="col-md-3 col-form-label">繰上げ返済</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="2000000" id="prepayments">
+              <div class="input-group-addon">円</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rent_change" class="col-md-3 col-form-label">家賃変動</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="-500" id="rent_change">
+              <div class="input-group-addon">円</div>
+            </div>
+            <small class="form-text text-muted">値上がりはプラス、値下がりはマイナス</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="drop_rate_for_new" class="col-md-3 col-form-label">新築値下がり率</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="5" id="drop_rate_for_new">
+              <div class="input-group-addon">%</div>
+            </div>
+            <small class="form-text text-muted">中古で買う場合は0</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="drop_rate_for_old" class="col-md-3 col-form-label">中古値下がり率</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="number" value="2" id="drop_rate_for_old">
+              <div class="input-group-addon">%</div>
+            </div>
+            <small class="form-text text-muted">値上がりが期待できる場合はマイナス</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-md-3 col-md-9">
+            <a class="btn btn-primary" href="#">資産形成シミュレーション</a>
+            <!-- a class="btn btn-info" href="#">保存</a -->
+          </div>
+        </div>
+      </form>
+      <br>
+      <table class="table table-striped table-bordered table-hover table-condensed">
+        <thead>
+          <tr>
+            <th class="text-xs-center">#</th>
+            <th class="text-xs-center">残債務</th>
+            <th class="text-xs-center">返済</th>
+            <th class="text-xs-center">利息</th>
+            <th class="text-xs-center">元本</th>
+            <th class="text-xs-center">管理</th>
+            <th class="text-xs-center">税</th>
+            <th class="text-xs-center">支出計</th>
+            <th class="text-xs-center">家賃収入</th>
+            <th class="text-xs-center">収支</th>
+            <th class="text-xs-center">繰上返済</th>
+            <th class="text-xs-center">手数料</th>
+            <th class="text-xs-center">累計収支</th>
+            <th class="text-xs-center">売却価格</th>
+            <th class="text-xs-center">売却時収支</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
